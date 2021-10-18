@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMovementPS : MonoBehaviour
 {
+    float speed = 20f;
+    float rotationspeed = -400f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -11,29 +14,16 @@ public class PlayerMovementPS : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //Only, if the W-Key is currenly pressed...
-        if (Input.GetKey(KeyCode.W))
-        {
-            //translate the player on the y-axis (which points up)
-            transform.Translate(0f, 0.01f, 0f);
-        }
+        float translation = Input.GetAxis("Vertical") * speed;
+        float rotation = Input.GetAxis("Horizontal")  * rotationspeed;
+
+        translation *= Time.deltaTime;
+        rotation *= Time.deltaTime;
         
-        //First exercise:
-        //make him walk backward, when S is pressed
-        
-        //Second exercise:
-        //make him turn left, if A is pressed
-        //transform.Rotate(0, 0, 0);
-        
-        //make him turn right, if D is pressed
-        
-        //Third exercise:
-        //What problem exists again with Update, Movement, Frame-Rate (FPS)
-        
-        //Fourth exercise:
-        //Input.GetAxis() instead of Input.GetKey()
-        
+        transform.Translate(0f, translation,0f);
+        transform.Rotate(0, 0, rotation);
+
     }
 }
