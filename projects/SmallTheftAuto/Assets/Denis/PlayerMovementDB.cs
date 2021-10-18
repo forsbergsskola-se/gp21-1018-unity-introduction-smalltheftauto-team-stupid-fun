@@ -16,7 +16,8 @@ public class PlayerMovementDB : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         // Use Input.GetAxis() instead of Input.GetKey()
+        // First Exercise: make him walk backwards, when S is pressed
+        // Use Input.GetAxis() instead of Input.GetKey()
         float translation = Input.GetAxis("Vertical") * speed;
         float rotation = Input.GetAxis("Horizontal") * rotationspeed;
 
@@ -26,9 +27,6 @@ public class PlayerMovementDB : MonoBehaviour
         // translate the player on the y-axis (which points up)
         transform.Translate(0, translation, 0);
         transform.Translate(0, 0, rotation);
-
-        // First Exercise:
-        // make him walk backwards, when S is pressed
 
         // Second Exercise:
         // make him turn left, if A is pressed
