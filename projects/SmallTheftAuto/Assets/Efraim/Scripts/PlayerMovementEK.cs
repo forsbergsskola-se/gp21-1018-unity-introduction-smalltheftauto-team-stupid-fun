@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovementMZ : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update() {
+        // only, if the W-Key is currently pressed...
+        if (Input.GetKey(KeyCode.W)) {
+            // translate the player on the y-axis (which points up)
+            transform.Translate(0f, 0.01f, 0f);
+        } else if (Input.GetKey(KeyCode.S)) {
+            transform.Translate(0f, -0.01f, 0f);
+        } else if  (Input.GetKey(KeyCode.D)) {
+            transform.Rotate(0.1f, 0f, 0f);
+        } else if (Input.GetKey(KeyCode.A)) {
+            transform.Rotate(-0.1f, 0f, 0f);
+        }
+
+        // Second Exercise:
+        // make him turn left, if A is pressed
+        // transform.Rotate(xAngle, yAngle, zAngle);
+        // make him turn right, if D is pressed
+
+        // Third Exercise:
+        // What problem exists again with Update, Movement, Frame-Rate (FPS)?
+
+        // Fourth Exercise:
+        // Use Input.GetAxis() instead of Input.GetKey()
+    }
+}
