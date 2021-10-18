@@ -18,7 +18,7 @@ public class PlayerMovementDB : MonoBehaviour
     {
          // Use Input.GetAxis() instead of Input.GetKey()
         float translation = Input.GetAxis("Vertical") * speed;
-        float roation = Input.GetAxis("Horizontal") * rotation;
+        float rotation = Input.GetAxis("Horizontal") * rotation;
 
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
