@@ -26,8 +26,9 @@ public class PlayerMovementDB : MonoBehaviour
         rotation *= Time.deltaTime;
         
         // translate the player on the y-axis (which points up)
-        transform.Rotate(strafe, translation, 0);
-        transform.Translate(0, 0, rotation);
+        transform.Translate(strafe, translation, 0);
+        transform.Rotate(0, 0, rotation);
+
 
         // Second Exercise:
         // make him turn left, if A is pressed
