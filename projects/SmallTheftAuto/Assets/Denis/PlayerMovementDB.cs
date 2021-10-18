@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovementDB : MonoBehaviour
 {
     private float speed = 10f;
-    private float rotationspeed = -300f;
+    private float rotationspeed = -200f;
     
     // Start is called before the first frame update
     void Start()
@@ -14,7 +14,7 @@ public class PlayerMovementDB : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // First Exercise: make him walk backwards, when S is pressed
         // Use Input.GetAxis() instead of Input.GetKey()
