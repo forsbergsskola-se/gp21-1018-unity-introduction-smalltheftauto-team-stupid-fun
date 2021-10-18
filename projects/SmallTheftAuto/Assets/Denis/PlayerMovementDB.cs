@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMovementDB : MonoBehaviour
 {
+    private float speed = 10f;
+    private float rotationspeed = -100f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -12,13 +15,13 @@ public class PlayerMovementDB : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-        // only, if the W-Key is currently pressed...
-        if (Input.GetKey(KeyCode.W)) {
+    {
+        float translation = Input.GetAxis("Vertical") * speed;
+        float roation = Input.GetAxis("Horizontal") * rotation;
         // translate the player on the y-axis (which points up)
         transform.Translate(0f, 0.01f, 0f);
-    }
-        
-    // First Exercise:
+
+        // First Exercise:
     // make him walk backwards, when S is pressed
         
     // Second Exercise:
@@ -31,6 +34,5 @@ public class PlayerMovementDB : MonoBehaviour
         
     // Fourth Exercise:
     // Use Input.GetAxis() instead of Input.GetKey()
-
-    }
+        }
 }
