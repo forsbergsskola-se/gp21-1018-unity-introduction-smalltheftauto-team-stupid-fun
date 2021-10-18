@@ -24,9 +24,6 @@ public class PlayerMovementMZ : MonoBehaviour
             transform.Translate(-0.01f, 0f, 0f);
         }
 
-        // First Exercise:
-        // make him walk backwards, when S is pressed
-
         // Second Exercise:
         // make him turn left, if A is pressed
         // transform.Rotate(xAngle, yAngle, zAngle);
