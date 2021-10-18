@@ -18,7 +18,7 @@ public class PlayerMovementPS : MonoBehaviour
     {
         float translation = Input.GetAxis("Vertical") * speed;
         float rotation = Input.GetAxis("Horizontal")  * rotationspeed;
-
+        
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
 
