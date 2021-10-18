@@ -24,7 +24,7 @@ public class PlayerMovementEK : MonoBehaviour
 
         transform.Translate(0, translation, 0);
         transform.Rotate(0, 0, rotation);
-        transform.Translate(jump, 0, 0);
+        transform.Translate(0, 0, jump);
 
     }
 }
