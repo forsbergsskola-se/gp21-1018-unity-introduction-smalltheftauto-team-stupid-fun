@@ -4,36 +4,46 @@ using UnityEngine;
 
 public class PlayerMovementEK : MonoBehaviour
 {
-    private float speed = 20f;
-    private float rotationspeed = 400f;
+    //movement speed variables
+    private float movementSpeed = 10f;
+    private float rotationSpeed = -200f;
+    private float jumpHeight = 10f;
+
+    //framerate independent
     void FixedUpdate()
     {
-        float translation = Input.GetAxis("Vertical") * speed;
-        float rotation = Input.GetAxis("Horizontal") * rotationspeed;
+        //using Input.GetAxis() method
+        //public static float GetAxis(string axisName);
+        float translation = Input.GetAxis("Vertical") * movementSpeed;
+        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+        float jump = Input.GetAxis("Jump") * jumpHeight;
 
+        translation *= Time.deltaTime;
+        rotation *= Time.deltaTime;
+        jump *= Time.deltaTime;
+
+        transform.Translate(0, translation, 0);
+        transform.Rotate(0, 0, rotation);
+        transform.Translate(jump, 0, 0);
 
     }
 }
-
-        // only, if the W-Key is currently pressed...
+        // // only, if the W-Key is currently pressed...
         // if (Input.GetKey(KeyCode.W)) {
         //     // translate the player on the y-axis (which points up)
-        //     transform.Translate(0f, 0.03f, 0f);
-        // } else if (Input.GetKey(KeyCode.S)) {
-        //     transform.Translate(0f, -0.03f, 0f);
-        // } else if  (Input.GetKey(KeyCode.D)) {
-        //     transform.Rotate(0f, 0f, -0.5f);
-        // } else if (Input.GetKey(KeyCode.A)) {
-        //     transform.Rotate(0f, 0f, 0.5f);
+        //     transform.Translate(0f, 0.01f, 0f);
         // }
-
-        // Second Exercise:
-        // make him turn left, if A is pressed
-        // transform.Rotate(xAngle, yAngle, zAngle);
-        // make him turn right, if D is pressed
-
-        // Third Exercise:
-        // What problem exists again with Update, Movement, Frame-Rate (FPS)?
-
-        // Fourth Exercise:
-        // Use Input.GetAxis() instead of Input.GetKey()
+        //
+        // // First Exercise:
+        // // make him walk backwards, when S is pressed
+        //
+        // // Second Exercise:
+        // // make him turn left, if A is pressed
+        // // transform.Rotate(xAngle, yAngle, zAngle);
+        // // make him turn right, if D is pressed
+        //
+        // // Third Exercise:
+        // // What problem exists again with Update, Movement, Frame-Rate (FPS)?
+        //
+        // // Fourth Exercise:
+        // // Use Input.GetAxis() instead of Input.GetKey()
