@@ -20,13 +20,12 @@ public class PlayerMovementDB : MonoBehaviour
         // Use Input.GetAxis() instead of Input.GetKey()
         float translation = Input.GetAxis("Vertical") * speed;
         float rotation = Input.GetAxis("Horizontal") * rotationspeed;
-        float strafe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-
+        
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
         
         // translate the player on the y-axis (which points up)
-        transform.Translate(strafe, translation, 0);
+        transform.Translate(0, translation, 0);
         transform.Rotate(0, 0, rotation);
 
 
