@@ -6,11 +6,11 @@ public class PlayerMovementPS : MonoBehaviour
 {
     float speed = 20f;
     float rotationspeed = -400f;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class PlayerMovementPS : MonoBehaviour
 
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
-        
+
         transform.Translate(0f, translation,0f);
         transform.Rotate(0, 0, rotation);
 

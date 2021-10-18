@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementMZ : MonoBehaviour
+public class PlayerMovementEK : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private float speed = 20f;
+    private float rotationspeed = 400f;
+    void FixedUpdate()
     {
+        float translation = Input.GetAxis("Vertical") * speed;
+        float rotation = Input.GetAxis("Horizontal") * rotationspeed;
+
 
     }
+}
 
-    // Update is called once per frame
-    void Update() {
         // only, if the W-Key is currently pressed...
-        if (Input.GetKey(KeyCode.W)) {
-            // translate the player on the y-axis (which points up)
-            transform.Translate(0f, 0.01f, 0f);
-        } else if (Input.GetKey(KeyCode.S)) {
-            transform.Translate(0f, -0.01f, 0f);
-        } else if  (Input.GetKey(KeyCode.D)) {
-            transform.Rotate(0.1f, 0f, 0f);
-        } else if (Input.GetKey(KeyCode.A)) {
-            transform.Rotate(-0.1f, 0f, 0f);
-        }
+        // if (Input.GetKey(KeyCode.W)) {
+        //     // translate the player on the y-axis (which points up)
+        //     transform.Translate(0f, 0.03f, 0f);
+        // } else if (Input.GetKey(KeyCode.S)) {
+        //     transform.Translate(0f, -0.03f, 0f);
+        // } else if  (Input.GetKey(KeyCode.D)) {
+        //     transform.Rotate(0f, 0f, -0.5f);
+        // } else if (Input.GetKey(KeyCode.A)) {
+        //     transform.Rotate(0f, 0f, 0.5f);
+        // }
 
         // Second Exercise:
         // make him turn left, if A is pressed
@@ -34,5 +37,3 @@ public class PlayerMovementMZ : MonoBehaviour
 
         // Fourth Exercise:
         // Use Input.GetAxis() instead of Input.GetKey()
-    }
-}
