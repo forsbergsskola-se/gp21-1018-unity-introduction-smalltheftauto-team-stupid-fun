@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovementDB : MonoBehaviour
 {
-    private float speed = 30f;
+    private float speed = 10f;
     private float rotationspeed = -300f;
     
     // Start is called before the first frame update
@@ -26,9 +26,8 @@ public class PlayerMovementDB : MonoBehaviour
         rotation *= Time.deltaTime;
         
         // translate the player on the y-axis (which points up)
-        transform.Translate(0, translation, 0);
-        transform.Translate(0, 0, rotation);
         transform.Rotate(strafe, translation, 0);
+        transform.Translate(0, 0, rotation);
 
         // Second Exercise:
         // make him turn left, if A is pressed
