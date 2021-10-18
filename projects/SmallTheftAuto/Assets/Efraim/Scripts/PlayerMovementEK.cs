@@ -19,9 +19,9 @@ public class PlayerMovementMZ : MonoBehaviour
         } else if (Input.GetKey(KeyCode.S)) {
             transform.Translate(0f, -0.01f, 0f);
         } else if  (Input.GetKey(KeyCode.D)) {
-            transform.Translate(0.01f, 0f, 0f);
+            transform.Rotate(0.1f, 0f, 0f);
         } else if (Input.GetKey(KeyCode.A)) {
-            transform.Translate(-0.01f, 0f, 0f);
+            transform.Rotate(-0.1f, 0f, 0f);
         }
 
         // Second Exercise:
@@ -34,6 +34,5 @@ public class PlayerMovementMZ : MonoBehaviour
 
         // Fourth Exercise:
         // Use Input.GetAxis() instead of Input.GetKey()
-
     }
 }
