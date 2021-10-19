@@ -502,8 +502,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1897142882}
   - component: {fileID: 1897142883}
+  - component: {fileID: 1897142884}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerEK
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,3 +538,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add0f83c9aae14de88ad63da0d8e4dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1897142884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897142881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566221d63f3d54187ad5e2287b13b9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DogPrefab: {fileID: 3118865513236967635, guid: d7037833a009444648bd7862ac815591, type: 3}
