@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 3c6f52a8495834200998edc47b160f7b
+guid: 01e67394984374295bb2c1d39373dca1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dogPrefab: {fileID: 2114834167717910726, guid: 9795ddf56d12242cdaa31085568d16b2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
