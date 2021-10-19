@@ -5,15 +5,14 @@ using UnityEngine;
 public class PlayerMovementNR : MonoBehaviour
 {
     float speed = 20f;
-    float rotationspeed = -400f;
+    float rotationspeed = -200f;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
 
     }
-
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
         float translation = Input.GetAxis("Vertical") * speed;
@@ -22,8 +21,7 @@ public class PlayerMovementNR : MonoBehaviour
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
 
-        transform.Translate(0f, translation,0f);
+        transform.Translate(0, translation,0);
         transform.Rotate(0, 0, rotation);
-
     }
 }
