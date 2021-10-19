@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class DogCompanionSpawnerEK : MonoBehaviour {
 
-    public GameObject DogPrefab;
+    public GameObject dogPrefab;
     private GameObject dogInstance;
 
     void Start() {
-        dogInstance = Instantiate(DogPrefab);
+        dogInstance = Instantiate(dogPrefab);
     }
 
     void Update() {
