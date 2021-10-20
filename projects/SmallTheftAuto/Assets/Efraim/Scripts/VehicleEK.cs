@@ -6,19 +6,22 @@ using UnityEngine;
 public class VehicleEK : MonoBehaviour {
 
     public GameObject player;
-    public CarMovementEK carMovementEK = new CarMovementEK();
     public GameObject car;
+    //public CarMovementEK carMovementEK;
 
     void Update() {
         if (PlayerIsInCar()) {
-            if (Vector3.Distance(player.transform.position, transform.position) < 5) {
+            ExitCar();
+        } else {
+            if (PlayerIsCloseToCar()) {
                 EnterCar();
             }
-        } else {
-            ExitCar();
         }
     }
 
+    bool PlayerIsCloseToCar() {
+        return Vector3.Distance(player.transform.position, transform.position) < 2;
+    }
     bool PlayerIsInCar() {
         return !player.activeInHierarchy;
     }
