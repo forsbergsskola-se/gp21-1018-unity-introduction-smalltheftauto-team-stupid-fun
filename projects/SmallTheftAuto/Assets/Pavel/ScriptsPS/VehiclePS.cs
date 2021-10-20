@@ -3,19 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VehiclePS : MonoBehaviour
-{
+public class VehiclePS : MonoBehaviour {
+
     public GameObject player;
     public CarMovementPS carMovementPS;
     public GameObject car;
     public DrivePS enterVehicle;
-    
-    
-    
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class VehiclePS : MonoBehaviour
             {
                 EnterCar();
             }
-            
+
         }
     }
 
