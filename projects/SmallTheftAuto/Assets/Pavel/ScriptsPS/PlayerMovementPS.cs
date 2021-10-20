@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PlayerMovementPS : MonoBehaviour
 {
-    float speed = 20f;
-    float rotationspeed = -400f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -14,16 +11,9 @@ public class PlayerMovementPS : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        float translation = Input.GetAxis("Vertical") * speed;
-        float rotation = Input.GetAxis("Horizontal")  * rotationspeed;
-        
-        translation *= Time.deltaTime;
-        rotation *= Time.deltaTime;
-
-        transform.Translate(0f, translation,0f);
-        transform.Rotate(0, 0, rotation);
-
+        transform.Translate(0f, 5f * Time.deltaTime * Input.GetAxis("Vertical"), 0f);
+        transform.Rotate(0f,0f,-180 * Time.deltaTime * Input.GetAxis("Horizontal"));
     }
 }
