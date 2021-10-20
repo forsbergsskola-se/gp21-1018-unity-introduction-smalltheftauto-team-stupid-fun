@@ -8,6 +8,7 @@ public class VehiclePS : MonoBehaviour
     public GameObject player;
     public CarMovementPS carMovementPS;
     public GameObject car;
+    public DrivePS enterVehicle;
     
     
     
@@ -36,17 +37,12 @@ public class VehiclePS : MonoBehaviour
 
     bool PlayerIsInCar()
     {
-        if (player.activeInHierarchy)
-        {
-            return false;
-        }
-
-        return true;
+        return !player.activeInHierarchy;
     }
 
     void LeaveCar()
     {
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetButtonDown("Interact-Vehicle"))
         {
             player.transform.position = transform.position;
             player.SetActive(true);
@@ -56,7 +52,7 @@ public class VehiclePS : MonoBehaviour
 
     void EnterCar()
     {
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetButtonDown("Interact-Vehicle"))
         {
             player.SetActive(false);
             carMovementPS.enabled = true;
