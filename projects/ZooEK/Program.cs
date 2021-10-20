@@ -8,21 +8,25 @@ namespace ZooEK {
 
         }
 
-        public void AddAnimal<T>() {
+        public void AddAnimal<TAnimals>() {
             Animal animal = new Animal();
         }
 
         // public bool HasAnimal() {
-        //     if {}
+        //     if (Animal) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
         // }
     }
 
-    class Zoo<T> where T : Animal {
+    class Zoo<TAnimals> where TAnimals : Animal {
         protected string[] zooAnimals = {"Animal"};
     }
 
     class Animal {
-        //public override string ToString() => GetType().Name;
+        public override string ToString() => GetType().Name;
     }
 
     class Mammal : Animal { }
