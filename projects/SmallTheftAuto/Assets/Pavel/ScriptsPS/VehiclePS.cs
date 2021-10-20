@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class VehiclePS : MonoBehaviour
 {
     public GameObject player;
     public CarMovementPS carMovementPS;
+    public GameObject car;
     
     
     
@@ -24,7 +26,11 @@ public class VehiclePS : MonoBehaviour
         }
         else
         {
-            EnterCar();
+            if (Vector3.Distance(player.transform.position, car.transform.position) < 7)
+            {
+                EnterCar();
+            }
+            
         }
     }
 
