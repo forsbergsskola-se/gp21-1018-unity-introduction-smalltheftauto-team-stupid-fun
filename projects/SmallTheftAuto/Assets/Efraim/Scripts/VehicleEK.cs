@@ -10,6 +10,7 @@ public class VehicleEK : MonoBehaviour {
     //public CarMovementEK carMovementEK;
 
     void Update() {
+
         if (PlayerIsInCar()) {
             ExitCar();
         } else {
@@ -20,7 +21,7 @@ public class VehicleEK : MonoBehaviour {
     }
 
     bool PlayerIsCloseToCar() {
-        return Vector3.Distance(player.transform.position, transform.position) < 2;
+        return Vector3.Distance(player.transform.position, transform.position) < 7;
     }
     bool PlayerIsInCar() {
         return !player.activeInHierarchy;
