@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Channels;
 
 namespace ZooPS
@@ -8,11 +10,12 @@ namespace ZooPS
         
         static void Main(string[] args)
         {
-            Zoo<Animal> animalZoo = new Zoo<Animal>();
-            animalZoo.AddAnimal(new Fish()); 
-            animalZoo.AddAnimal(new Clownfish()); 
-            animalZoo.AddAnimal(new Lion()); 
-            animalZoo.AddAnimal(new Donkey());
+            {
+                Zoo<Fish> fishZoo = new Zoo<Fish>();
+                fishZoo.AddAnimal(new Salmon());
+                fishZoo.AddAnimal(new Salmon());
+                Console.WriteLine("This should be False: "+fishZoo.HasAnimal<Clownfish>());
+            }
         }
     }
 
@@ -63,17 +66,29 @@ namespace ZooPS
 
     public class Zoo<TAnimal> where TAnimal : Animal
     {
-        private Animal[] animalZoo = new Animal[0];
+        // private TAnimal[] animalZooArr = Array.Empty<TAnimal>();
+        List<TAnimal> animals = new List<TAnimal>();
         
         public void AddAnimal(TAnimal animal)  
         {
-            Array.Resize(ref animalZoo, animalZoo.Length +1);
-            animalZoo[animalZoo.Length -1] = animal;
+            animals.Add(animal);
+
+            
+            
+            // Array.Resize(ref animalZooArr, animalZooArr.Length +1);
+            // animalZooArr[^1] = animal;
         }
 
-        public void HasAnimal ()
+        public bool HasAnimal<TSpecies> () where  TSpecies : TAnimal
         {
-            
+            for (int i = 0; i < animals.Count(); i++)
+            {
+                if (animals[i] is TSpecies ) 
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
