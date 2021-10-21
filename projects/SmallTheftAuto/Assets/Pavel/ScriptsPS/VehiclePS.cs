@@ -50,7 +50,7 @@ public class VehiclePS : MonoBehaviour {
         }
     }
 
-    void EnterCar()
+    public void EnterCar()
     {
         if (Input.GetButtonDown("Interact-Vehicle"))
         {
