@@ -1,54 +1,48 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ZooEK {
     abstract class Program {
-        static void Main()
-        {
+        static void Main() {
 
-        }
+             Zoo<Animal> animalZoo = new Zoo<Animal>();
+             animalZoo.AddAnimal(new Fish()); // OKAY
+             animalZoo.AddAnimal(new Clownfish()); // OKAY
+             animalZoo.AddAnimal(new Lion()); // OKAY
+             animalZoo.AddAnimal(new Donkey()); // OKAY
 
-        // public Animal AddAnimal<TAnimals>() {
-        //     Animal animal = new Animal();
-        //     if (typeof(TAnimals) is Animal) {
-        //         return animal;
-        //     } else {
-        //         return null;
-        //     }
-        // }
+             Zoo<Lion> lionZoo = new Zoo<Lion>();
+             lionZoo.AddAnimal(new Lion()); // OKAY
+             lionZoo.AddAnimal(new Lion()); // OKAY
+             lionZoo.AddAnimal(new Lion()); // OKAY
 
-    }
-
-    class Zoo<TAnimals> where TAnimals : Animal {
-
-        //Animal[] zooAnimals = { };
-        private Animal[] animalZoo = new Animal[0];
-        public Zoo<Fish> fishZoo = new Zoo<Fish>();
-        public Zoo<Lion> lionZoo = new Zoo<Lion>();
-        public Zoo<Donkey> donkeyZoo = new Zoo<Donkey>();
-        public Zoo<Mammal> mammalZoo = new Zoo<Mammal>();
-
-        //Zoo<Fish> fishZoo = new Zoo<Fish>();
-        //Console.WriteLine("This should be True: "+fishZoo.HasAnimal<Clownfish>());
-
-        // public bool HasAnimal<TAnimals>() {
-        //     if () {
-        //         return true;
-        //     } else {
-        //         return false;
-        //     }
-        // }
-
-        public void AddAnimal(TAnimals animal) {
-            Array.Resize<Animal>(ref animalZoo, animalZoo.Length + 1);
-            animalZoo[animalZoo.Length - 1] = animal;
+             Zoo<Fish> fishZoo = new Zoo<Fish>();
+             fishZoo.AddAnimal(new Salmon());
+             fishZoo.AddAnimal(new Salmon());
+             Console.WriteLine("This should be False: "+fishZoo.HasAnimal<Clownfish>());
         }
     }
 
-    class Animal {
-        //string name;
-        //public override string ToString() => GetType().Name;
+    class Zoo<TAnimal> where TAnimal : Animal {
+        // instead of TAnimal[] animals = new TAnimal[0];
+        //TAnimal[] animals = Array.Empty<TAnimal>();
+        List<TAnimal> animals = new List<TAnimal>();
+
+        public void AddAnimal(TAnimal animal) {
+            animals.Add(animal);
+        }
+
+        public bool HasAnimal<TSpecies>() where TSpecies : TAnimal {
+            for (int i = 0; i < animals.Count; i++) {
+                if (animals[i] is TSpecies) {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
+    class Animal { }
     class Mammal : Animal { }
     class Bear : Mammal { }
     class Donkey : Mammal { }
