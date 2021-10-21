@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class DrivePS : MonoBehaviour
 {
-    public GameObject player;
-    public CarMovementPS carMovementPS;
+    public GameObject car;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,15 +14,19 @@ public class DrivePS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    
-    void EnterCar()
-    {
         if (Input.GetButtonDown("Interact-Vehicle"))
         {
-            player.SetActive(false);
-            carMovementPS.enabled = true;
+            VehiclePS[] vehicle = FindObjectsOfType<VehiclePS>();
+            
+
+
+            for (int i = 0; i < vehicle.Length; i++)
+            {
+                if (Vector3.Distance(this.transform.position, vehicle[i].transform.position) < 7)
+                {
+                    
+                }
+            }
         }
     }
 }
