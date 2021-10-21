@@ -1,18 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VehiclePS : MonoBehaviour
-{
+public class VehiclePS : MonoBehaviour {
+
     public GameObject player;
     public CarMovementPS carMovementPS;
-    
-    
-    
+    public GameObject car;
+    public DrivePS enterVehicle;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,23 +27,22 @@ public class VehiclePS : MonoBehaviour
         }
         else
         {
-            EnterCar();
+            if (Vector3.Distance(player.transform.position, car.transform.position) < 7)
+            {
+                EnterCar();
+            }
+
         }
     }
 
     bool PlayerIsInCar()
     {
-        if (player.activeInHierarchy)
-        {
-            return false;
-        }
-
-        return true;
+        return !player.activeInHierarchy;
     }
 
     void LeaveCar()
     {
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetButtonDown("Interact-Vehicle"))
         {
             player.transform.position = transform.position;
             player.SetActive(true);
@@ -50,7 +52,7 @@ public class VehiclePS : MonoBehaviour
 
     void EnterCar()
     {
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetButtonDown("Interact-Vehicle"))
         {
             player.SetActive(false);
             carMovementPS.enabled = true;

@@ -1,33 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementEK : MonoBehaviour
-{
-    //movement speed variables
-    private float movementSpeed = 10f;
-    private float rotationSpeed = -200f;
-    private float jumpHeight = 10f;
-
-    //framerate independent
-    void FixedUpdate()
-    {
-        //using Input.GetAxis() method
-        //public static float GetAxis(string axisName);
-        float translation = Input.GetAxis("Vertical") * movementSpeed;
-        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
-        float jump = Input.GetAxis("Jump") * jumpHeight;
-
-        translation *= Time.deltaTime;
-        rotation *= Time.deltaTime;
-        jump *= Time.deltaTime;
-
-        transform.Translate(0, translation, 0);
-        transform.Rotate(0, 0, rotation);
-        transform.Translate(0, 0, jump);
-
+public class PlayerMovementEK : MonoBehaviour {
+    private void Update() {
+        transform.Translate(0f, 5f * Time.deltaTime * Input.GetAxis("Vertical"), 0f);
+        transform.Rotate(0f, 0f, -180f * Time.deltaTime * Input.GetAxis("Horizontal"));
     }
 }
+    // //movement speed variables
+     // private float movementSpeed = 10f;
+     // private float rotationSpeed = -200f;
+     // //private float jumpHeight = 10f;
+     //
+     // //framerate independent
+     // void FixedUpdate() {
+     //
+     //     //using Input.GetAxis() method
+     //     //public static float GetAxis(string axisName);
+     //     float translation = Input.GetAxis("Vertical") * movementSpeed;
+     //     float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+     //     //float jump = Input.GetAxis("Jump") * jumpHeight;
+     //
+     //     translation *= Time.deltaTime;
+     //     rotation *= Time.deltaTime;
+     //     //jump *= Time.deltaTime;
+     //
+     //     transform.Translate(0, translation, 0);
+     //     transform.Rotate(0, 0, rotation);
+     //     //transform.Translate(0, 0, jump);
+     // }
         // // only, if the W-Key is currently pressed...
         // if (Input.GetKey(KeyCode.W)) {
         //     // translate the player on the y-axis (which points up)
