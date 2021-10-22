@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 509909921732022501}
   - component: {fileID: 509909921732022500}
   - component: {fileID: 509909921732022499}
+  - component: {fileID: 6595920379423518555}
   m_Layer: 0
   m_Name: PlayerEK
   m_TagString: Player
@@ -351,6 +352,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dogPrefab: {fileID: 3118865513236967635, guid: d7037833a009444648bd7862ac815591, type: 3}
+--- !u!114 &6595920379423518555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509909921732022502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75ac4c48125b4f74b9fb681a655c8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &509909922394589719
 GameObject:
   m_ObjectHideFlags: 0
