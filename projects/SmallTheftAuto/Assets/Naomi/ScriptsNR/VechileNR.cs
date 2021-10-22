@@ -38,7 +38,7 @@ public class VechileNR : MonoBehaviour
 
         if (carDistance < 5)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetButtonDown("Interact-Vehicle"))
             {
                 player.SetActive(false);
                 carMovement.enabled = true;
@@ -48,7 +48,7 @@ public class VechileNR : MonoBehaviour
 
     public void LeaveCar()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetButtonDown("Interact-Vehicle"))
         {
             player.transform.position = this.transform.position;
             player.SetActive(true);
