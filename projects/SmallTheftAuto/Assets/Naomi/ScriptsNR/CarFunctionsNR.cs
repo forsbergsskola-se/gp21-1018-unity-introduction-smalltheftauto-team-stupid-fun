@@ -9,17 +9,10 @@ public class CarFunctionsNR : PlayerMovement
     
     void Start()
     {
-        movement = GetComponent<PlayerMovementNR>();
         movement.enabled = false;
     }
     void Update()
     {
 
     }
-
-    public void SetMovement(bool input)
-    {
-        movement.enabled = input;
-    }
-    
 }
