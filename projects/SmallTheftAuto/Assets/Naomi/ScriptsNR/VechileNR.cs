@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class VechileNR : MonoBehaviour
@@ -33,10 +34,15 @@ public class VechileNR : MonoBehaviour
 
     public void EnterCar()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        float carDistance = Vector3.Distance(player.transform.position, this.transform.position);
+
+        if (carDistance < 5)
         {
-            player.SetActive(false);
-            carMovement.enabled = true;
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                player.SetActive(false);
+                carMovement.enabled = true;
+            }
         }
     }
 
