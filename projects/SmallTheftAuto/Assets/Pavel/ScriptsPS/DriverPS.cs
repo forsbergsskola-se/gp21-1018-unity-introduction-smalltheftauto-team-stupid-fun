@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class DrivePS : MonoBehaviour
+public class DriverPS : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class DrivePS : MonoBehaviour
             
             if (distance < 7)
             {
-                vehicle.EnterCar();
+                vehicle.EnterCar(GetComponent<DriverPS>());
             }
         }
     }
