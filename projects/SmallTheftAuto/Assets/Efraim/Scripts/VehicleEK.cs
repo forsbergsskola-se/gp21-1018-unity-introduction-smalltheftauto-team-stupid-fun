@@ -9,42 +9,37 @@ public class VehicleEK : MonoBehaviour {
     public GameObject car;
     //public CarMovementEK carMovementEK;
 
-    void Update() {
-
-        if (PlayerIsInCar()) {
-            ExitCar();
-        } else {
-            if (PlayerIsCloseToCar()) {
-                EnterCar();
-            }
-        }
-    }
-
-    bool PlayerIsCloseToCar() {
-        return Vector3.Distance(player.transform.position, transform.position) < 7;
-    }
-    bool PlayerIsInCar() {
-        return !player.activeInHierarchy;
-    }
-
-    void ExitCar() {
+    private void Update() {
         if (Input.GetButtonDown("Interact-Vehicle")) {
-            player.transform.position = transform.position;
-            player.SetActive(true);
-            GetComponent<CarMovementEK>().enabled = false;
-            //carMovementEK.enabled = false;
+
         }
     }
 
-    void EnterCar() {
-        if (Input.GetButtonDown("Interact-Vehicle")) {
-            player.SetActive(false);
-            GetComponent<CarMovementEK>().enabled = true;
-            //carMovementEK.enabled = true;
-        }
+    public void EnterCar() {
+
+    }
+
+    public void ExitCar() {
+
     }
 }
 
+    // public void EnterCar() {
+    //     if (Input.GetButtonDown("Interact-Vehicle")) {
+    //         player.SetActive(false);
+    //         GetComponent<CarMovementEK>().enabled = true;
+    //         //carMovementEK.enabled = true;
+    //     }
+    // }
+    //
+    // public void ExitCar() {
+    //     if (Input.GetButtonDown("Interact-Vehicle")) {
+    //         player.transform.position = transform.position;
+    //         player.SetActive(true);
+    //         GetComponent<CarMovementEK>().enabled = false;
+    //         //carMovementEK.enabled = false;
+    //     }
+    // }
 
 // private void EnterCar() {
 //     this.player.SetActive(false);
