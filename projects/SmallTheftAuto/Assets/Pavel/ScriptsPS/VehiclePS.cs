@@ -8,7 +8,6 @@ using UnityEngine;
 public class VehiclePS : MonoBehaviour {
     
     private DriverPS driver;
-    public CarMovementPS carMovementPS;
     public GameObject car;
     
     // Start is called before the first frame update

@@ -332,7 +332,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7113417365940240359}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0519841a0a05c9e4d88831ae953dc8e7, type: 3}
   m_Name: 
@@ -351,7 +351,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carMovementPS: {fileID: 7049654498822271714}
   car: {fileID: 7113417365940240359}
-  enterVehicle: {fileID: 0}
 --- !u!1 &8316473895312374502
 GameObject:
   m_ObjectHideFlags: 0
