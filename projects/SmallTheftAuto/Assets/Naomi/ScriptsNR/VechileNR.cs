@@ -17,22 +17,37 @@ public class VechileNR : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if(PlayerIsInCar()) 
         {
-            if (player.activeInHierarchy)
-            {
-                player.SetActive(false);
-                carMovement.enabled = true;
-            }
-            else
-            {
-                player.transform.position = this.transform.position;
-                player.SetActive(true);
-                carMovement.enabled = false;
-            }
+            LeaveCar();
+        } else {
+            EnterCar();
         }
-        
     }
 
+    public bool PlayerIsInCar()
+    {
+        return !player.activeInHierarchy;
+    }
+
+
+    public void EnterCar()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            player.SetActive(false);
+            carMovement.enabled = true;
+        }
+    }
+
+    public void LeaveCar()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            player.transform.position = this.transform.position;
+            player.SetActive(true);
+            carMovement.enabled = false;
+        }
+    }
     
 }
