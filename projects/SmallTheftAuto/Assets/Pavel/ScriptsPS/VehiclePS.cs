@@ -36,7 +36,7 @@ public class VehiclePS : MonoBehaviour {
         GetComponent<CarMovementPS>().enabled = false;
     }
 
-    public void EnterCar(DriverPS driver )
+    public void EnterCar(DriverPS driver)
     {
         this.driver = driver;
         car.GetComponent<DriverPS>();
