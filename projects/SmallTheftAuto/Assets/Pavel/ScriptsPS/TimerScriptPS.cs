@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class TimerScriptPS : MonoBehaviour
 {
-    private float timePassed = 5;
+    private float timePassed = 160;
     public TextMeshProUGUI text;
     
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class TimerScriptPS : MonoBehaviour
         int sec = (int) (timePassed % 60);
         int min = (int) (timePassed / 60) % 60;
 
-        string timerString = $" {min:00}min {sec:00}s ";
+        string timerString = $" {min:0}min {sec:00}s ";
         text.text = timerString;
         
         if (timePassed > 0)
