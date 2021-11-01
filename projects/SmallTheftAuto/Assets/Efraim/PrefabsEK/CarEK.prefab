@@ -64,7 +64,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ea1f6a813f048fdac98a23caf475d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carMovementEK: {fileID: 6643106897636951670}
   car: {fileID: 4327695754270480678}
 --- !u!1 &4327695754846590833
 GameObject:

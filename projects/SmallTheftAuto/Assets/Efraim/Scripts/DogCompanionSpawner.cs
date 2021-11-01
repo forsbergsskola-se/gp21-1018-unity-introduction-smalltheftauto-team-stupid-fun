@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DogCompanionSpawnerEK : MonoBehaviour {
+public class DogCompanionSpawner : MonoBehaviour {
 
     public GameObject dogPrefab;
     private GameObject dogInstance;
