@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimerScriptPS : MonoBehaviour
 {
-    private float timePassed = 0;
-    public Text text;
+    private float timePassed = 5;
+    public TextMeshProUGUI text;
     
     // Start is called before the first frame update
     void Start()
@@ -17,11 +21,23 @@ public class TimerScriptPS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timePassed += Time.deltaTime;
-        Debug.Log(timePassed);
+        
+        int sec = (int) (timePassed % 60);
+        int min = (int) (timePassed / 60) % 60;
 
-        double rounder = System.Math.Round(timePassed, 2);
-        text.text = rounder.ToString();
+        string timerString = $" {min:00}min {sec:00}s ";
+        text.text = timerString;
+        
+        if (timePassed > 0)
+        {
+            timePassed -= Time.deltaTime;
+        }
+
+        else
+        {
+            SceneManager.LoadScene("SceneP");
+        }
+        
     }
     
 }
