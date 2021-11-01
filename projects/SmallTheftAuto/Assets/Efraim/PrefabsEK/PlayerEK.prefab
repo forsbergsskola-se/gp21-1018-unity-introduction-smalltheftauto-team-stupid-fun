@@ -298,7 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 509909921732022501}
   - component: {fileID: 509909921732022500}
-  - component: {fileID: 509909921732022499}
+  - component: {fileID: 733337066797934127}
   - component: {fileID: 6595920379423518555}
   m_Layer: 0
   m_Name: PlayerEK
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add0f83c9aae14de88ad63da0d8e4dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &509909921732022499
+--- !u!114 &733337066797934127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 509909921732022502}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566221d63f3d54187ad5e2287b13b9f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 62be6d77d1d5c4872ac26d33b63dd415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dogPrefab: {fileID: 3118865513236967635, guid: d7037833a009444648bd7862ac815591, type: 3}

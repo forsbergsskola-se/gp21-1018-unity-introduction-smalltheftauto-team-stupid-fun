@@ -1,8 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DriverEK : MonoBehaviour {
-
     void Update() {
 
         if (Input.GetButtonDown("Interact-Vehicle")) {
@@ -16,7 +16,7 @@ public class DriverEK : MonoBehaviour {
             VehicleEK vehicle = vehicles[0];
 
             for (int i = 0; i < vehicles.Length; i++) {
-                if (Vector3.Distance(this.transform.position, vehicles[i].transform.position) < 7) {
+                if (Vector3.Distance(this.transform.position, vehicles[i].transform.position) < distance) {
                     vehicle = vehicles[i];
                     distance = Vector3.Distance(this.transform.position, vehicle.transform.position);
                 }
