@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class CarMovementPS : MonoBehaviour
 {
-    
+        
+        
     
     
 
@@ -14,9 +15,11 @@ public class CarMovementPS : MonoBehaviour
     {
         
 
-        // transform.Translate(0f, 20f * Time.deltaTime * Input.GetAxis("Vertical"), 0f);
-        // transform.Rotate(0f,0f,-400 * Time.deltaTime * Input.GetAxis("Horizontal"));
+        transform.Translate(0f, 20f * Time.deltaTime * Input.GetAxis("Vertical"), 0f);
+        transform.Rotate(0f,0f,-400 * Time.deltaTime * Input.GetAxis("Horizontal"));
 
 
     }
 }
+
+
