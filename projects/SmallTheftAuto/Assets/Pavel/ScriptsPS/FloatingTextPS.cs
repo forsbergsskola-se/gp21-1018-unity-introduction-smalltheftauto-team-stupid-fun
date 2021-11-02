@@ -1,21 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+
 
 public class FloatingTextPS : MonoBehaviour
 {
-    public GameObject textPrefab;
-    private GameObject textInstance;
+
+    public GameObject floatingTextPrefab;
+    public GradientAlphaKey a;
     
     // Start is called before the first frame update
-    void OnEnable()
+    void Start()
     {
-        textInstance = Instantiate(textPrefab);
+             
+        
     }
 
     // Update is called once per frame
-    void OnDisable()
+    void Update()
     {
-        Destroy(textInstance);
+        if (floatingTextPrefab.activeSelf)
+        {
+            transform.Translate(0f,1f,0f);
+            a.alpha -= 1;
+        }
+        else if (a.alpha == 0)
+        {
+            Destroy(gameObject);
+        }
+        
+        
     }
 }

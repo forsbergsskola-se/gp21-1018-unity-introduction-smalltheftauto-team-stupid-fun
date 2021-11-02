@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarFunctionsNR : PlayerMovement
+public class CarFunctionsNR : MonoBehaviour
 {
     
-    public PlayerMovementNR movement;
+    public CarMovementNR movement;
     
     void Start()
     {
