@@ -9,13 +9,14 @@ namespace ZooNR
             Zoo<Fish> fishZoo = new Zoo<Fish>();
             fishZoo.AddAnimal(new Fish());
             fishZoo.AddAnimal(new Clownfish());
+            fishZoo.AddAnimal(new Salmon());
             fishZoo.HasAnimal<Mammal>();
             fishZoo.HasAnimal<Salmon>();
         }
     }
 
 
-    class Zoo<TAnimal>  where TAnimal : Animal
+    class Zoo<TAnimal> where TAnimal : Animal
     {
         
         TAnimal[] AnimalArray = new TAnimal[0];
@@ -49,49 +50,22 @@ namespace ZooNR
         
     }
     
-    class Student
-    {
-        
-    }
+    class Student {}
     
-    class Animal
-    {
-        
-    }
+    class Animal {}
     
-    class Fish : Animal
-    {
-        
-    }
+    class Fish : Animal {}
 
-    class Mammal : Animal
-    {
-        
-    }
+    class Mammal : Animal {}
 
-    class Bear : Mammal
-    {
-        
-    }
+    class Bear : Mammal {}
     
-    class Donkey : Mammal
-    {
-        
-    }
+    class Donkey : Mammal {}
     
-    class Lion : Mammal
-    {
-        
-    }
+    class Lion : Mammal {}
     
-    class Salmon : Fish
-    {
-        
-    }
+    class Salmon : Fish {}
     
-    class Clownfish : Fish
-    {
-        
-    }
+    class Clownfish : Fish {}
     
 }
