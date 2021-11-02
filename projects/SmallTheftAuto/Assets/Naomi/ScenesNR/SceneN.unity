@@ -247,6 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9f9e322b6f1804b9d6920a3946c2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  carMovement: {fileID: 0}
 --- !u!114 &270789091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +304,6 @@ GameObject:
   - component: {fileID: 503276246}
   - component: {fileID: 503276247}
   - component: {fileID: 503276248}
-  - component: {fileID: 503276249}
   - component: {fileID: 503276250}
   m_Layer: 0
   m_Name: Player
@@ -352,20 +353,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dogPrefab: {fileID: 8416546057458507869, guid: 4f86c4de8a9200644878905fdbb362a2, type: 3}
---- !u!114 &503276249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503276245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546a10d6e8a37434bb082d1d52b5882a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Car: {fileID: 1433140503}
-  Player: {fileID: 503276245}
 --- !u!65 &503276250
 BoxCollider:
   m_ObjectHideFlags: 0
