@@ -19,9 +19,11 @@ public class VechileNR : MonoBehaviour
     void Update()
     {
         if(PlayerIsInCar()) 
-        {
+        { 
             LeaveCar();
-        } else {
+        } 
+        else 
+        {
             EnterCar();
         }
     }
@@ -50,7 +52,7 @@ public class VechileNR : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact-Vehicle"))
         {
-            player.transform.position = this.transform.position;
+            player.transform.position = transform.position;
             player.SetActive(true);
             carMovement.enabled = false;
         }
