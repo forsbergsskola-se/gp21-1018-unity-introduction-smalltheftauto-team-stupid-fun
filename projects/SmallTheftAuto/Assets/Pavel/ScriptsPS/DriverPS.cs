@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class DriverPS : MonoBehaviour
 {
+
+    public GameObject floatingTextPrefab;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +42,7 @@ public class DriverPS : MonoBehaviour
             if (distance < 7)
             {
                 vehicle.EnterCar(GetComponent<DriverPS>());
+                Instantiate(floatingTextPrefab, transform.position, quaternion.identity);
             }
         }
     }
