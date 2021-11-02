@@ -6,7 +6,11 @@ namespace ZooNR
     {
         static void Main()
         {
-           
+            Zoo<Fish> fishZoo = new Zoo<Fish>();
+            fishZoo.AddAnimal(new Fish());
+            fishZoo.AddAnimal(new Clownfish());
+            fishZoo.HasAnimal<Mammal>();
+            fishZoo.HasAnimal<Fish>();
         }
         
     }
@@ -15,6 +19,35 @@ namespace ZooNR
     class Zoo<TAnimal>  where TAnimal : Animal
     {
         
+        TAnimal[] AnimalArray = new TAnimal[0];
+        
+        public void AddAnimal(TAnimal animal)
+        {
+            Array.Resize(ref AnimalArray, AnimalArray.Length+1);
+            AnimalArray[AnimalArray.Length-1] = animal;
+        }
+
+        public bool HasAnimal<TAnimal>()
+        {
+            bool result = false;
+            
+            for (int i = 0; i < AnimalArray.Length; i++)
+            {
+                if (AnimalArray[i] is TAnimal)
+                {
+                     result = true;
+                     Console.WriteLine("True");
+                }
+                else
+                {
+                     result = false;
+                     Console.WriteLine("True");
+                }
+            }
+
+            Console.WriteLine(result);
+            return result;
+        }
         
     }
     
