@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Vehicle
   - UI
+  - World
+  - Object
+  - Animal
   layers:
   - Default
   - TransparentFX
@@ -14,11 +17,11 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - World
+  - Vehicle
+  - Object
+  - Human
+  - Animal
   - 
   - 
   - 
