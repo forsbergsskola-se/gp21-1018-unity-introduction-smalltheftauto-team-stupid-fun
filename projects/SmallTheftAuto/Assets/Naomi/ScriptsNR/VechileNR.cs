@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class VechileNR : MonoBehaviour
 {
-    public GameObject player;
-    public CarMovementNR carMovement;
+    private DriverNR driver;
+    public GameObject car;
+    public Vector3 offset;
 
 
     // Start is called before the first frame update
@@ -18,44 +19,29 @@ public class VechileNR : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerIsInCar()) 
-        { 
-            LeaveCar();
-        } 
-        else 
+        if (Input.GetButtonDown("Interact-Vehicle"))
         {
-            EnterCar();
-        }
-    }
-
-    public bool PlayerIsInCar()
-    {
-        return !player.activeInHierarchy;
-    }
-
-
-    public void EnterCar()
-    {
-        float carDistance = Vector3.Distance(player.transform.position, this.transform.position);
-
-        if (carDistance < 5)
-        {
-            if (Input.GetButtonDown("Interact-Vehicle"))
+            if (driver != null)
             {
-                player.SetActive(false);
-                carMovement.enabled = true;
+                LeaveCar();
             }
-        }
+        } 
+    }
+    
+    public void EnterCar(DriverNR driver)
+    {
+        this.driver = driver;
+        car.GetComponent<DriverNR>();
+        driver.gameObject.SetActive(false);
+        GetComponent<CarMovementNR>().enabled = true;
     }
 
     public void LeaveCar()
     {
-        if (Input.GetButtonDown("Interact-Vehicle"))
-        {
-            player.transform.position = transform.position;
-            player.SetActive(true);
-            carMovement.enabled = false;
-        }
+        driver.gameObject.transform.position = car.transform.position + offset;
+        driver.gameObject.SetActive(true);
+        driver = null;
+        GetComponent<CarMovementNR>().enabled = false;
     }
     
 }

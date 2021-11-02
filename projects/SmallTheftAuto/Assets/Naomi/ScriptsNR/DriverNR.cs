@@ -15,8 +15,30 @@ public class DriverNR : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact-Vehicle"))
         {
-            FindObjectOfType<VechileNR>();
-            
+            VechileNR[] vechiles =  FindObjectsOfType<VechileNR>();
+
+            if (vechiles.Length == 0)
+            {
+                return;
+            }
+
+            float distance = Vector3.Distance(this.transform.position, vechiles[0].transform.position);
+            VechileNR vechile = vechiles[0];
+
+            for (int i = 1; i < vechiles.Length; i++)
+            {
+                if (Vector3.Distance(this.transform.position, vechiles[i].transform.position) < distance)
+                {
+                    vechile = vechiles[i];
+                    distance = Vector3.Distance(this.transform.position, vechile.transform.position);
+                }
+            }
+
+            if (distance < 5)
+            {
+                vechile.EnterCar(GetComponent<DriverNR>());
+            }
+
         }
     }
 }
