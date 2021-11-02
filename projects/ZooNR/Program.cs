@@ -10,9 +10,8 @@ namespace ZooNR
             fishZoo.AddAnimal(new Fish());
             fishZoo.AddAnimal(new Clownfish());
             fishZoo.HasAnimal<Mammal>();
-            fishZoo.HasAnimal<Fish>();
+            fishZoo.HasAnimal<Salmon>();
         }
-        
     }
 
 
@@ -35,13 +34,12 @@ namespace ZooNR
             {
                 if (AnimalArray[i] is TAnimal)
                 {
-                     result = true;
-                     Console.WriteLine("True");
+                    result = true;
+                     break;
                 }
                 else
                 {
                      result = false;
-                     Console.WriteLine("True");
                 }
             }
 
