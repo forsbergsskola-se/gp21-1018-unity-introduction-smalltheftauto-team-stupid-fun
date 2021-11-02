@@ -4,17 +4,25 @@ namespace ZooNR
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+           
         }
+        
     }
 
 
+    class Zoo<TAnimal>  where TAnimal : Animal
+    {
+        
+        
+    }
+    
     class Student
     {
         
     }
+    
     class Animal
     {
         
