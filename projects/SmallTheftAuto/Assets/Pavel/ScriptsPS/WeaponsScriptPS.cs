@@ -1,64 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Search;
 using UnityEngine;
 
 public class WeaponsScriptPS : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public Transform firePoint;
+    public GameObject bulletPrefab;
+    
     void Update()
     {
-        
-    }
-}
-
-public abstract class Weapon
-{
-    public int power;
-    public string name;
-
-    public Weapon(int power, string name)
-    {
-        this.power = power;
-        this.name = name;
-    }
-
-    protected int Power
-    {
-        get
+        if (Input.GetButtonDown("Fire1"))
         {
-            return power;
+            Shoot();
         }
     }
-}
 
-public class Hands : Weapon
-{
-    public Hands() : base(5, "Unarmed")
+    void Shoot()
     {
-        
-    }
-}
-
-public class HandPistol : Weapon
-{
-    public HandPistol() : base(15, "Hand Pistol")
-    {
-        
-    }
-}
-
-public class MachineGun : Weapon
-{
-    public MachineGun() : base(8, "Machine Gun")
-    {
-        
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 }
 
