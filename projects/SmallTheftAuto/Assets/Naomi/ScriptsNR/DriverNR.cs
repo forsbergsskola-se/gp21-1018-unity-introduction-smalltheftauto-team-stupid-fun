@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DriverNR : MonoBehaviour
 {
+    public GameObject refcanvas;
+    public TMPro.TextMeshProUGUI textPref;
+    public Vector3 offset;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +43,13 @@ public class DriverNR : MonoBehaviour
             if (distance < 5)
             {
                 vechile.EnterCar(GetComponent<DriverNR>());
+                
+                // text spawn
+                TMPro.TextMeshProUGUI niceCar = Instantiate(textPref, transform.position + offset, Quaternion.identity);
+                niceCar.transform.SetParent(refcanvas.transform, false);
             }
 
         }
+
     }
 }
