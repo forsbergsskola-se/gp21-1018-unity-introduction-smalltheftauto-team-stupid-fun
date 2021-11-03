@@ -337,6 +337,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2811412065321233848, guid: a6064f23f6cd34405b9eac161f5228ab, type: 3}
+      propertyPath: m_Drag
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3563381010166277581, guid: a6064f23f6cd34405b9eac161f5228ab, type: 3}
       propertyPath: m_Name
       value: CarDriftEK
@@ -362,6 +366,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1396690320749610290, guid: 87529095e9257462ba2460db91e3735a, type: 3}
+      propertyPath: m_Drag
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8831996734517987845, guid: 87529095e9257462ba2460db91e3735a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -506,7 +514,7 @@ GameObject:
   - component: {fileID: 1438849120}
   m_Layer: 5
   m_Name: TimerEK
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -527,8 +535,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -311}
+  m_SizeDelta: {x: 0, y: 622.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1438849120
 MonoBehaviour:
@@ -660,7 +668,7 @@ RectTransform:
   - {fileID: 1438849119}
   m_Father: {fileID: 1762891530}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
