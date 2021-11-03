@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
 
     public int maxHealth = 100;
     public int currentHealth;
-    public HealthBarNR healthBar;
+    public HealthBar healthBar;
     
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,9 @@ public class PlayerUI : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            
             SceneManager.LoadScene("SceneN");
+            
         }
     }
 
