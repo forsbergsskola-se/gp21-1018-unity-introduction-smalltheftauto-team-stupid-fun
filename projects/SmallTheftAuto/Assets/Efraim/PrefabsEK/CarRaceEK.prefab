@@ -899,7 +899,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &-8651520928601713879
@@ -927,3 +927,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2ae577c01bd486d86d4346308c2029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  motorForce: 0
+  breakForce: 0
+  maxSteerAngle: 0
+  flwCollider: {fileID: 0}
+  frwCollider: {fileID: 0}
+  rlwCollider: {fileID: 0}
+  rrwCollider: {fileID: 0}
+  flwTransform: {fileID: 0}
+  frwTransform: {fileID: 0}
+  rlwTransform: {fileID: 0}
+  rrwTransform: {fileID: 0}
