@@ -10,9 +10,7 @@ using UnityEngine.UIElements;
 
 public class FloatingTextPS : MonoBehaviour
 {
-
-    public GameObject floatingTextPrefab;
-    public GradientAlphaKey a;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -22,14 +20,18 @@ public class FloatingTextPS : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (floatingTextPrefab.activeSelf)
+        TMP_Text text = GetComponentInChildren<TMP_Text>();
+        if (text.color.a > 0)
         {
-            transform.Translate(0f,1f,0f);
-            a.alpha -= 1;
+            transform.Translate(0f,.01f,0f);
+            Color color = text.color;
+            color.a -= 0.01f;
+            text.color = color;
+            new Vector3(0, 0, -1);
         }
-        else if (a.alpha == 0)
+        else 
         {
             Destroy(gameObject);
         }
