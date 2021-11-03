@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class TimerEK : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class TimerEK : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    float timePassed = 10;
+    public TextMeshProUGUI text;
+
+    private void Update() {
+        if (timePassed > 0) {
+            timePassed -= Time.deltaTime;
+        }
     }
 }
