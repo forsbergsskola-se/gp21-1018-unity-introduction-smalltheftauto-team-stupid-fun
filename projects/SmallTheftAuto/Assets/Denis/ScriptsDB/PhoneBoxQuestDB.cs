@@ -8,12 +8,15 @@ public class PhoneBoxQuestDB : PlayerMovement
     private void Start()
     {
         Interaction.SetActive(false);
-        
+        //anime = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void OpenInteractableIcon()
     {
-        
+        object interactIcon;
+        interactIcon.SetActive(true);
     }
+
+    public void CloseInteractableIcon();
 }
