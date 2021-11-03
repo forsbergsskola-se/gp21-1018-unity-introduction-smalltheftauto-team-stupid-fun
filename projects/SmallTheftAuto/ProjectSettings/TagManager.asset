@@ -9,6 +9,7 @@ TagManager:
   - World
   - Object
   - Animal
+  - Enemy
   layers:
   - Default
   - TransparentFX
