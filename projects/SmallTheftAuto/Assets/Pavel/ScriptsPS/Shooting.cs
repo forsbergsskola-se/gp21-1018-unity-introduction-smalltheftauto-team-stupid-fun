@@ -5,14 +5,19 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    public float damage;
+    public float range;
+    public float fireRate = 15f;
+    public float nextTimeToFire = 0f;
     public int magazineSize, bulletsLeft;
     public float reloadTime;
     public bool isReloading, isShooting;
-    
+
     public Transform firePoint;
     public GameObject bulletPrefab;
 
     public float bulletForce = 20f;
+    
 
 
     private void Awake()
@@ -23,10 +28,11 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        isShooting = Input.GetButtonDown("Fire1");
+        isShooting = Input.GetButton("Fire1");
         
-        if (isShooting && !isReloading && bulletsLeft > 0)
+        if (isShooting && !isReloading && bulletsLeft > 0 && Time.time >= nextTimeToFire)
         {
+            nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
 
@@ -39,8 +45,21 @@ public class Shooting : MonoBehaviour
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        rb.AddForce(firePoint.up * bulletForce, ForceMode.Impulse);
+        
+        RaycastHit hit;
+        if (Physics.Raycast(firePoint.transform.position, firePoint.transform.up, out hit, range))
+        {
+            Debug.Log(hit.transform.name);
+            Target target = hit.transform.GetComponent<Target>();
+            if (target != null)
+            {
+                target.TakeDamage(damage);
+            }
+        }
+        
+        
 
         bulletsLeft--;
     }
