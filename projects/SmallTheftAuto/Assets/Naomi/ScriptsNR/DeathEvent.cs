@@ -31,7 +31,7 @@ public class DeathEvent : MonoBehaviour
     {
         playerPosition.transform.position = respawnPoint.transform.position;
         //Physics.SyncTransforms(); this is if we have a trigger to cause the death then uncomment this
-        //player.GetComponent<Currency>().LoseMoney();
+        player.GetComponent<Currency>().LoseMoney();
         player.GetComponent<HealthSystem>().ResetHealth();
         isDead = false;
     }
