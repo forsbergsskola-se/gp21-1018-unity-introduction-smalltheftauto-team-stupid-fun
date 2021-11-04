@@ -17,16 +17,10 @@ public class HealthSystem : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
-
     
     void Update()
     {
-        if (currentHealth <= 0)
-        {
-            
-            SceneManager.LoadScene("SceneN");
-            
-        }
+        
     }
 
     public void TakeDamage(int damage)
