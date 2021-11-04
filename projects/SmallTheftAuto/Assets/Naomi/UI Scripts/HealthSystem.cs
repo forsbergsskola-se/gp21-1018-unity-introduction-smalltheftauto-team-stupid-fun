@@ -10,7 +10,7 @@ public class HealthSystem : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
-    
+
 
     void Start()
     {
@@ -20,7 +20,15 @@ public class HealthSystem : MonoBehaviour
     
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            TakeDamage(10);
+        }
+
+        if (currentHealth <= 0)
+        {
+            GetComponent<DeathEvent>().PlayerDeathEvent();
+        }
     }
 
     public void TakeDamage(int damage)
@@ -35,4 +43,11 @@ public class HealthSystem : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, 100);
         healthBar.SetHealth(currentHealth);
     }
+
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetHealth(maxHealth);
+    }
+    
 }

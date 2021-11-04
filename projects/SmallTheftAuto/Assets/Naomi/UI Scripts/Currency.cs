@@ -26,7 +26,7 @@ public class Currency : MonoBehaviour
         moneyText.text = currentMoney.ToString() + "$";
     }
 
-    public void LoseMoney(int moneyToLose)
+    public void LoseMoney()
     {
         currentMoney /= 2;
         moneyText.text = currentMoney.ToString() + "$";
