@@ -38,7 +38,10 @@ public class Currency : MonoBehaviour
         {
             Debug.Log("I dont have enough money...");
         }
-        currentMoney -= moneyToSpend;
-        moneyText.text = currentMoney.ToString() + "$";
+        else
+        {
+            currentMoney -= moneyToSpend;
+            moneyText.text = currentMoney.ToString() + "$";  
+        }
     }
 }
