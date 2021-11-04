@@ -10,6 +10,7 @@ TagManager:
   - Object
   - Animal
   - Enemy
+  - Minimap
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Object
   - Human
   - Animal
-  - 
+  - Minimap
   - 
   - 
   - 
