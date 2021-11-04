@@ -1,37 +1,32 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovementPS : MonoBehaviour
 {
-    // private Rigidbody body;
-    // public float speed;
-    // public float rotationSpeed;
-    // private float vertical;
-    // private float horizontal;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
+    public float moveSpeed = 5f;
 
-        // body = GetComponent<Rigidbody>();
-    }
+    public Rigidbody2D rb;
+    public Camera cam;
 
-    // private void FixedUpdate()
-    // {
-    //     vertical = Input.GetAxis("Vertical");
-    //     horizontal = Input.GetAxis("Horizontal");
-    //     body.velocity = (transform.forward * vertical) * speed * Time.fixedDeltaTime;
-    //     transform.Rotate((transform.up * horizontal) * rotationSpeed * Time.fixedDeltaTime);
-    // }
+    Vector2 movement;
+    Vector2 mousePos;
 
-
-
-    //Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
-        transform.Translate(0f, 5f * Time.deltaTime * Input.GetAxis("Vertical"), 0f);
-        transform.Rotate(0f,0f,-180 * Time.deltaTime * Input.GetAxis("Horizontal"));
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        Vector2 lookDir = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDir.y ,lookDir.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
     }
 }
