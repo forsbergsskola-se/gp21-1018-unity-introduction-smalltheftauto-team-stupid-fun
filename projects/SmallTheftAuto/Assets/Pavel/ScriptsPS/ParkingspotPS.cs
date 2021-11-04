@@ -14,7 +14,7 @@ public class ParkingspotPS : MonoBehaviour
         if (hasCar)
         {
             var car = Instantiate(carPrefabPS);
-            car.transform.position = this.transform.position + new Vector3(0,0,-1);
+            car.transform.position = this.transform.position + new Vector3(0,0,0);
         }
     }
 
