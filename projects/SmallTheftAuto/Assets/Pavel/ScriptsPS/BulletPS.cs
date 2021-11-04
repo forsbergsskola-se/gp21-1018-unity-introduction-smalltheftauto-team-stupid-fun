@@ -1,27 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class BulletPS : MonoBehaviour
 {
 
-    public float speed = 20f;
-    public int damage = 40;
-    public Rigidbody2D rb;
+    public GameObject hitEffect;
     
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision2D)
     {
-        rb.velocity = (transform.right * speed);
-    }
-
-    private void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        EnemyPS enemy = hitInfo.GetComponent<EnemyPS>();
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
-        }
+        GameObject effect = Instantiate(hitEffect, transform.position, quaternion.identity);
+        Destroy(effect, 5f);
         Destroy(gameObject);
     }
 }
