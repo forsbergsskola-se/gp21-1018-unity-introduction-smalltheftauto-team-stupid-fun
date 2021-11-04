@@ -11,7 +11,7 @@ public class ScoreSystem : MonoBehaviour
     void Start()
     {
         currentScore = 10;
-        scoreText.text = currentScore.ToString()  + " points";
+        scoreText.text = "Score: " + currentScore.ToString();
     }
 
  
@@ -23,7 +23,7 @@ public class ScoreSystem : MonoBehaviour
     public void GainScore(int scoreToGain)
     {
         currentScore += scoreToGain;
-        scoreText.text = currentScore.ToString() + " points";
+        scoreText.text = "Score: " + currentScore.ToString();
     }
     
     public void LoseScore(int scoreToLose)
@@ -31,12 +31,12 @@ public class ScoreSystem : MonoBehaviour
         if (currentScore - scoreToLose < 0)
         {
             currentScore = 0;
-            scoreText.text = currentScore.ToString() + " points";
+            scoreText.text = "Score: " + currentScore.ToString();
         }
         else
         {
             currentScore -= scoreToLose;
-            scoreText.text = currentScore.ToString() + " points";
+            scoreText.text = "Score: " + currentScore.ToString();
         }
     }
 
