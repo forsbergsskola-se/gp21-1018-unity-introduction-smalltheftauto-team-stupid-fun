@@ -18,6 +18,6 @@ public class BulletPS : MonoBehaviour
     {
         GameObject effect = Instantiate(hitEffect, transform.position, quaternion.identity);
         Destroy(effect, 5f);
-        Destroy(gameObject,5f);
+        Destroy(gameObject);
     }
 }
