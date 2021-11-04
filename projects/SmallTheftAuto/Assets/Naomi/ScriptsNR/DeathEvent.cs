@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeathEvent : MonoBehaviour
 {
     [SerializeField] private Transform playerPosition;
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private GameObject player;
-    private TMPro.TextMeshProUGUI deathText;
-    public float respawnTime;
-    public bool isDead;
-    
+    public TMPro.TextMeshProUGUI deathText;
+    public GameObject defCanvas;
+
     void Start()
     {
         
@@ -18,27 +18,30 @@ public class DeathEvent : MonoBehaviour
     
     void Update()
     {
-   
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            PlayerDeathEvent();
+        }
     }
 
     public void PlayerDeathEvent()
     {
-        isDead = true;
-        Invoke("Respawn", respawnTime);
+        DeathText();
+        Respawn();
     }
 
     public void Respawn()
     {
         playerPosition.transform.position = respawnPoint.transform.position;
-        //Physics.SyncTransforms(); this is if we have a trigger to cause the death then uncomment this
         player.GetComponent<Currency>().LoseMoney();
         player.GetComponent<HealthSystem>().ResetHealth();
-        isDead = false;
     }
 
     public void DeathText()
     {
-        
+        TMPro.TextMeshProUGUI wasted = Instantiate(deathText, transform.position, Quaternion.identity);
+        wasted.transform.SetParent(defCanvas.transform, false);
+        Destroy(wasted, 2);
     }
 
 
