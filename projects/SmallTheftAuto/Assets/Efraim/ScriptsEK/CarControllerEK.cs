@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CarControllerEK : MonoBehaviour {
@@ -86,7 +88,7 @@ public class CarControllerEK : MonoBehaviour {
      private void ApplySteering() {
 
              //limit turn ability when moving slowly
-             float minTurnSpeedFactor = carRigidbody.velocity.magnitude / 10;
+             float minTurnSpeedFactor = carRigidbody.velocity.magnitude / 8;
              minTurnSpeedFactor = Mathf.Clamp01(minTurnSpeedFactor);
 
              //update rotation angle based on input
@@ -98,10 +100,14 @@ public class CarControllerEK : MonoBehaviour {
              carRigidbody.MoveRotation(carRigidbody.rotation * deltaRotation);
 
              //apply angular drag if no steering input, to stop rotation
+             if (Input.GetKey(KeyCode.E)) {
+                 //carRigidbody.angularVelocity
+                 transform.rotation = Quaternion.identity;
+             }
 
-             if (steeringInput == 0)
-                 carRigidbody.angularDrag = Mathf.Lerp(defaultAngularDrag, carRigidbody.angularDrag, Time.fixedDeltaTime * 3);
-             else this.defaultAngularDrag = carRigidbody.angularDrag;
+             // if (steeringInput == 0)
+             //     carRigidbody.angularDrag = Mathf.Lerp(defaultAngularDrag, carRigidbody.angularDrag, Time.fixedDeltaTime * 0.1f);
+             // else this.defaultAngularDrag = carRigidbody.angularDrag;
      }
 
      void KillOrthogonalVelocity() {
