@@ -17,6 +17,4 @@ public class ParkingspotPS : MonoBehaviour
             car.transform.position = this.transform.position + new Vector3(0,0,0);
         }
     }
-
-    
 }

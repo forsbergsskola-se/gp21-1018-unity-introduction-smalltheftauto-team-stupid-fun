@@ -382,6 +382,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &315421843 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2869803895866254300, guid: a948185a547dc9447859165019bab359, type: 3}
+  m_PrefabInstance: {fileID: 2024800132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &320443615
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,6 +967,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 72
   m_CollisionDetection: 0
+--- !u!1 &1359301540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4911031768735072506, guid: 4803cdf411376c94aaaf7df3b4154a57, type: 3}
+  m_PrefabInstance: {fileID: 4911031768165912559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1359301543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359301540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190f7204aa174d14b94d40fd1785b542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 315421843}
+  smoothSpeed: 0.04
+  offset: {x: 0, y: 0, z: -15}
 --- !u!1 &1483083847
 GameObject:
   m_ObjectHideFlags: 0
