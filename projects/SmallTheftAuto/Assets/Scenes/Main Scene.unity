@@ -4420,6 +4420,7 @@ GameObject:
   - component: {fileID: 836389985}
   - component: {fileID: 836389984}
   - component: {fileID: 836389983}
+  - component: {fileID: 836389987}
   m_Layer: 0
   m_Name: Parking (2)
   m_TagString: Untagged
@@ -4518,6 +4519,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836389981}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &836389987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836389981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea18e432ee57bc4ab7efe310be3f2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCar: 0
+  carPrefabPS: {fileID: 0}
+  newZPosition: -0.7
 --- !u!1 &840098450
 GameObject:
   m_ObjectHideFlags: 0
@@ -7112,6 +7128,7 @@ GameObject:
   - component: {fileID: 1219353083}
   - component: {fileID: 1219353082}
   - component: {fileID: 1219353081}
+  - component: {fileID: 1219353085}
   m_Layer: 0
   m_Name: Parking
   m_TagString: Untagged
@@ -7210,6 +7227,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219353079}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1219353085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219353079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea18e432ee57bc4ab7efe310be3f2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCar: 1
+  carPrefabPS: {fileID: 3913018278773783563, guid: df73b5fec4f067d48a5ad496e32d0bab, type: 3}
+  newZPosition: -0.7
 --- !u!1001 &1222112898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10136,6 +10168,7 @@ GameObject:
   - component: {fileID: 1671365158}
   - component: {fileID: 1671365157}
   - component: {fileID: 1671365156}
+  - component: {fileID: 1671365160}
   m_Layer: 0
   m_Name: Parking (1)
   m_TagString: Untagged
@@ -10234,6 +10267,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671365154}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1671365160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671365154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea18e432ee57bc4ab7efe310be3f2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCar: 1
+  carPrefabPS: {fileID: 3913018278773783563, guid: df73b5fec4f067d48a5ad496e32d0bab, type: 3}
+  newZPosition: -0.7
 --- !u!1001 &1684143818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10357,6 +10405,7 @@ GameObject:
   - component: {fileID: 1699015078}
   - component: {fileID: 1699015077}
   - component: {fileID: 1699015076}
+  - component: {fileID: 1699015080}
   m_Layer: 0
   m_Name: Parking (3)
   m_TagString: Untagged
@@ -10455,6 +10504,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699015074}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1699015080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699015074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea18e432ee57bc4ab7efe310be3f2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCar: 1
+  carPrefabPS: {fileID: 3913018278773783563, guid: df73b5fec4f067d48a5ad496e32d0bab, type: 3}
+  newZPosition: -0.7
 --- !u!1 &1703336328
 GameObject:
   m_ObjectHideFlags: 0
@@ -13067,7 +13131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040414498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.42, y: 2.04, z: -0.75}
+  m_LocalPosition: {x: 2.42, y: 2.04, z: -0.356}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13952,11 +14016,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3387623350230692679, guid: 482658f4d57b4af42915c86d36e9fad5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3387623350230692679, guid: 482658f4d57b4af42915c86d36e9fad5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.659
+      value: -0.412
       objectReference: {fileID: 0}
     - target: {fileID: 3387623350230692679, guid: 482658f4d57b4af42915c86d36e9fad5, type: 3}
       propertyPath: m_LocalRotation.w
