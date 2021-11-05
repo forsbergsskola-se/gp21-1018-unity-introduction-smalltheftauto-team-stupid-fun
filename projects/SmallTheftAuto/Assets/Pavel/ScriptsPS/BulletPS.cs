@@ -9,7 +9,7 @@ public class BulletPS : MonoBehaviour
 
     
 
-    private void Update()
+    private void FixedUpdate()
     {
         Destroy(gameObject,5f);
     }

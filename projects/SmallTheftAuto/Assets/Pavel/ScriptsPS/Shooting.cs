@@ -59,8 +59,6 @@ public class Shooting : MonoBehaviour
             }
         }
         
-        
-
         bulletsLeft--;
     }
 
