@@ -4040,7 +4040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1703336329
 Transform:
   m_ObjectHideFlags: 0
@@ -5702,6 +5702,22 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 1263897646}
+--- !u!114 &1098536894032294561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098536894032294555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b440464572eb94eaee58c0db84b5fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magSize: {fileID: 1444710172}
+  bullLeft: {fileID: 1891665167}
+  pistol: {fileID: 1703336330}
+  machineGun: {fileID: 148173246}
 --- !u!114 &1098536894032294562
 MonoBehaviour:
   m_ObjectHideFlags: 0
