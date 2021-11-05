@@ -10,8 +10,8 @@ public class CarControllerEK : MonoBehaviour {
      public float accelerationFactor = 30;
      public float turnFactor = 0.4f;
      public float maxSpeed = 20;
-     public float defaultDrag;
-     public float defaultAngularDrag;
+     public float defaultDrag = 0.2f;
+     public float defaultAngularDrag = 0.2f;
 
      private float accelerationInput = 0;
      private float steeringInput = 0;
@@ -32,8 +32,8 @@ public class CarControllerEK : MonoBehaviour {
 
      private void Awake() {
          carRigidbody = GetComponent<Rigidbody>();
-         defaultDrag = carRigidbody.drag;
-         defaultAngularDrag = carRigidbody.angularDrag;
+         carRigidbody.drag = defaultDrag;
+         carRigidbody.angularDrag = defaultAngularDrag;
      }
 
      //framerate independent for physics calculation
@@ -100,8 +100,8 @@ public class CarControllerEK : MonoBehaviour {
              //apply angular drag if no steering input, to stop rotation
 
              if (steeringInput == 0)
-                 carRigidbody.angularDrag = Mathf.Lerp(carRigidbody.angularDrag, defaultAngularDrag, Time.fixedDeltaTime * 3);
-             else carRigidbody.angularDrag = this.defaultAngularDrag;
+                 carRigidbody.angularDrag = Mathf.Lerp(defaultAngularDrag, carRigidbody.angularDrag, Time.fixedDeltaTime * 3);
+             else this.defaultAngularDrag = carRigidbody.angularDrag;
      }
 
      void KillOrthogonalVelocity() {
