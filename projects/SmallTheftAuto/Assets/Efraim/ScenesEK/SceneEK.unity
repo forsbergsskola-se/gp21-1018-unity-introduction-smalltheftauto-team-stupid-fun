@@ -130,18 +130,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3563381010542084971}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 890a1f33c1ad04c2a8bf4203d6e65ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   driftFactor: 0.95
   accelerationFactor: 30
+  breakForce: 3
   turnFactor: 3.5
   maxSpeed: 20
-  defaultDrag: 0
-  defaultAngularDrag: 0
-  breakForce: 3
 --- !u!114 &377777391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,11 +312,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   driftFactor: 0.95
   accelerationFactor: 20
+  breakForce: 3
   turnFactor: 0.3
   maxSpeed: 20
-  defaultDrag: 0.2
-  defaultAngularDrag: 10
-  breakForce: 3
 --- !u!1 &1595071420
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +727,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3563381010542084971}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -9.97, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1085200843509528539}
@@ -1079,11 +1075,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   driftFactor: 0.95
   accelerationFactor: 50
+  breakForce: 100
   turnFactor: 3.5
   maxSpeed: 30
-  defaultDrag: 0
-  defaultAngularDrag: 0
-  breakForce: 100
 --- !u!1 &2336793688090741530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,7 +1566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3563381010541382559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,13 +1592,27 @@ GameObject:
   - component: {fileID: 377777392}
   - component: {fileID: 377777390}
   - component: {fileID: 377777391}
+  - component: {fileID: 3563381010542084972}
   m_Layer: 8
   m_Name: CarDriftEK2D
   m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
+--- !u!114 &3563381010542084972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3563381010542084971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308e5e2f686564ff2938af72d1bbcc2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 3563381010542084971}
 --- !u!4 &3706239524938132805
 Transform:
   m_ObjectHideFlags: 0

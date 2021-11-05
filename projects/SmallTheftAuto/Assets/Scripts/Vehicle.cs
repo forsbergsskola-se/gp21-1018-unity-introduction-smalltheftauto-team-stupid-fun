@@ -19,7 +19,6 @@ public class Vehicle : MonoBehaviour {
         this.driver = driver;
         car.GetComponent<Driver>();
         driver.gameObject.SetActive(false);
-        GetComponent<AiCarMovement>().enabled = false;
         GetComponent<CarMovement>().enabled = true;
     }
 
