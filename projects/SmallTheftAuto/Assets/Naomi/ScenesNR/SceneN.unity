@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 409225265}
   - component: {fileID: 409225264}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Ammo Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
