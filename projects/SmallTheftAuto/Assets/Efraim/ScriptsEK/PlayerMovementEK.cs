@@ -8,6 +8,7 @@ public class PlayerMovementEK : MonoBehaviour {
     [SerializeField] float moveSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private float jumpforce;
 
     private void Update() {
         Move();
@@ -22,6 +23,7 @@ public class PlayerMovementEK : MonoBehaviour {
             transform.Translate(0, 0,moveSpeed * Time.deltaTime * Input.GetAxis("Vertical"));
             transform.Rotate(0,rotationSpeed * Time.deltaTime * Input.GetAxis("Horizontal"), 0);
         }
+        transform.Translate(0, jumpforce * Time.deltaTime * Input.GetAxis("Jump"), 0);
     }
 
     // private void Movement() {

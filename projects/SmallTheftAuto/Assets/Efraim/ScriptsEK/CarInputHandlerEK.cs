@@ -16,7 +16,7 @@ public class CarInputHandlerEK : MonoBehaviour {
 
         inputVector.x = Input.GetAxis("Horizontal");
         inputVector.y = Input.GetAxis("Vertical");
-        inputVector.z = Input.GetAxis("Jump");
+        inputVector.z = Input.GetAxis("Jump"); //break
 
         carController.SetInputVector(inputVector);
     }
