@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CarControllerEK : MonoBehaviour {
@@ -14,17 +10,16 @@ public class CarControllerEK : MonoBehaviour {
      public float maxSpeed = 20;
      public float defaultDrag = 0.2f;
      public float defaultAngularDrag = 0.2f;
+     public float breakForce;
 
      private float accelerationInput = 0;
      private float steeringInput = 0;
-     private float breakInput = 0;
+     private float breakingInput = 0;
 
      private float currentBreakForce;
      private bool isBreaking;
 
      private float velocityVsUp = 0;
-
-     [SerializeField] private float breakForce;
 
      Vector3 eulerAngleVelocity;
      Quaternion deltaRotation;
@@ -121,11 +116,9 @@ public class CarControllerEK : MonoBehaviour {
      public void SetInputVector(Vector3 inputVector) {
          steeringInput = inputVector.x;
          accelerationInput = inputVector.y;
-         breakInput = inputVector.z;
+         breakingInput = inputVector.z;
          isBreaking = Input.GetKey(KeyCode.Space);
      }
-
-
 }
 
 // [Header("Car Settings")]
