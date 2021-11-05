@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,27 +6,32 @@ using UnityEngine.UI;
 
 public class WeaponUI : MonoBehaviour
 {
+    public WeaponSwitching weaponState;
     public Sprite fist;
     public Sprite pistol;
     public Sprite machinegun;
-    
-    
-    // Update is called once per frame
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        ChangeWeaponSprite();
+    }
+
+    public void ChangeWeaponSprite()
+    {
+        if (weaponState.selectedWeapon == 0)
         {
             this.gameObject.GetComponent<Image>().sprite = fist;
         }
         
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (weaponState.selectedWeapon == 1)
         {
             this.gameObject.GetComponent<Image>().sprite = pistol;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (weaponState.selectedWeapon == 2)
             
         {
             this.gameObject.GetComponent<Image>().sprite = machinegun;
         }
     }
+    
 }

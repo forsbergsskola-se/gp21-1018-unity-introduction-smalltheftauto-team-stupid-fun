@@ -22,5 +22,10 @@ public class AmmoCount : MonoBehaviour
             magSize.text = pistol.magazineSize.ToString();
             bullLeft.text = pistol.bulletsLeft.ToString();
         }
+        else if (!machineGun.isActiveAndEnabled && !pistol.isActiveAndEnabled)
+        {
+            magSize.text = "0";
+            bullLeft.text = "0";
+        }
     }
 }

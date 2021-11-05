@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour
 {
-
     public int selectedWeapon = 0;
     
     void Start()
@@ -59,10 +58,10 @@ public class WeaponSwitching : MonoBehaviour
             selectedWeapon = 2;
         }
         
-        if (Input.GetKeyDown(KeyCode.Alpha4) && transform.childCount >= 4)
-        {
-            selectedWeapon = 3;
-        }
+        // if (Input.GetKeyDown(KeyCode.Alpha4) && transform.childCount >= 4)
+        // {
+        //     selectedWeapon = 3;
+        // }
 
         if (previousSelectedWeapon != selectedWeapon)
         {
