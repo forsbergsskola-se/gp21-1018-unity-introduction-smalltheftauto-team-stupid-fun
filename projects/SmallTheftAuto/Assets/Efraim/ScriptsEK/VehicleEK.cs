@@ -19,13 +19,13 @@ public class VehicleEK : MonoBehaviour {
         this.driver = driver;
         car.GetComponent<DriverEK>();
         driver.gameObject.SetActive(false);
-        GetComponent<CarMovementEK>().enabled = true;
+        GetComponent<CarControllerEK>().enabled = true;
     }
 
     void ExitCar() {
         driver.gameObject.transform.position = car.transform.position + new Vector3(3, 0, 0);
         driver.gameObject.SetActive(true);
         driver = null;
-        GetComponent<CarMovementEK>().enabled = false;
+        GetComponent<CarControllerEK>().enabled = false;
     }
 }

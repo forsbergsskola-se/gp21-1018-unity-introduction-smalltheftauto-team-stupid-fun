@@ -8,8 +8,10 @@ public class CarControllerEK : MonoBehaviour {
     [Header("Car Settings")]
      public float driftFactor = 0.95f;
      public float accelerationFactor = 30;
-     public float turnFactor = 3.5f;
+     public float turnFactor = 0.4f;
      public float maxSpeed = 30;
+     public float defaultDrag = 5;
+     public float defaultAngularDrag = 50;
 
      private float accelerationInput = 0;
      private float steeringInput = 0;
@@ -27,11 +29,11 @@ public class CarControllerEK : MonoBehaviour {
 
      Rigidbody carRigidbody;
      BoxCollider carBoxCollider;
-     private float defaultDrag;
 
      private void Awake() {
          carRigidbody = GetComponent<Rigidbody>();
          defaultDrag = carRigidbody.drag;
+         defaultAngularDrag = carRigidbody.angularDrag;
      }
 
      //framerate independent for physics calculation
@@ -54,23 +56,23 @@ public class CarControllerEK : MonoBehaviour {
          velocityVsUp = Vector3.Dot(transform.forward, carRigidbody.velocity);
 
          //limit car velocity to maxSpeed in forward dir
-         if (velocityVsUp > maxSpeed && accelerationInput > 0)
+         if (velocityVsUp > maxSpeed & accelerationInput > 0)
              return;
 
          //limit car reverse velocity to 50% maxSpeed
-         if (velocityVsUp < -maxSpeed * 0.5 && accelerationInput < 0)
+         if (velocityVsUp < -maxSpeed * 0.5 & accelerationInput < 0)
              return;
 
          //limit car velocity in all directions
-         if (carRigidbody.velocity.sqrMagnitude > maxSpeed * maxSpeed && accelerationInput > 0)
+         if (carRigidbody.velocity.sqrMagnitude > maxSpeed * maxSpeed & accelerationInput > 0)
              return;
 
          //apply drag if no acceleration input, so car stops
          if (accelerationInput == 0)
-             carRigidbody.drag = Mathf.Lerp(carRigidbody.drag, 3.0f, Time.fixedDeltaTime * 3);
+             carRigidbody.drag = Mathf.Lerp(carRigidbody.drag, defaultDrag, Time.fixedDeltaTime * 3);
          else carRigidbody.drag = this.defaultDrag;
 
-         currentBreakForce = isBreaking ? breakForce : 0f;
+         currentBreakForce = isBreaking ? breakForce : 0;
 
          if (isBreaking) {
              ApplyBreaking();
@@ -88,14 +90,16 @@ public class CarControllerEK : MonoBehaviour {
              minTurnSpeedFactor = Mathf.Clamp01(minTurnSpeedFactor);
 
              //update rotation angle based on input
-             eulerAngleVelocity.y -= steeringInput * turnFactor * minTurnSpeedFactor;
+             eulerAngleVelocity.y -= -steeringInput * turnFactor * minTurnSpeedFactor;
 
              Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * turnFactor);
 
              //apply steering by rotating car object
              carRigidbody.MoveRotation(carRigidbody.rotation * deltaRotation);
 
-             //carRigidbody.MoveRotation(rotationAngle);
+             if (steeringInput == 0)
+                 carRigidbody.angularDrag = Mathf.Lerp(carRigidbody.angularDrag, defaultAngularDrag, Time.fixedDeltaTime * 3);
+             else carRigidbody.angularDrag = this.defaultAngularDrag;
      }
 
      void KillOrthogonalVelocity() {
