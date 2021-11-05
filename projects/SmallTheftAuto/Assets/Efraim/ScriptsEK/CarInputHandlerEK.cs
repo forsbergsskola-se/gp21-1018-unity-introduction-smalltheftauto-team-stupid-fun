@@ -12,11 +12,23 @@ public class CarInputHandlerEK : MonoBehaviour {
     }
 
     private void Update() {
-        Vector2 inputVector = Vector2.zero;
+        Vector3 inputVector = Vector3.zero;
 
         inputVector.x = Input.GetAxis("Horizontal");
         inputVector.y = Input.GetAxis("Vertical");
+        inputVector.z = Input.GetAxis("Jump");
 
         carController.SetInputVector(inputVector);
     }
 }
+
+// private void Update() {
+//     Vector2 inputVector = Vector2.zero;
+//     Vector2 inputBreak = Vector2.zero;
+//
+//     inputVector.x = Input.GetAxis("Horizontal");
+//     inputVector.y = Input.GetAxis("Vertical");
+//     inputBreak.x = -Input.GetAxis("Jump");
+//
+//     carController.SetInputVector(inputVector);
+// }
