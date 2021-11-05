@@ -18,8 +18,7 @@ public class PlayerMovementEK : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W)) {
             transform.Translate(0, 0, runSpeed * Time.deltaTime * Input.GetAxis("Vertical"));
             transform.Rotate(0,rotationSpeed * Time.deltaTime * Input.GetAxis("Horizontal"), 0);
-        }
-        else {
+        } else {
             transform.Translate(0, 0,moveSpeed * Time.deltaTime * Input.GetAxis("Vertical"));
             transform.Rotate(0,rotationSpeed * Time.deltaTime * Input.GetAxis("Horizontal"), 0);
         }
