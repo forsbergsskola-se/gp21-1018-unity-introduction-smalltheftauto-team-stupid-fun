@@ -372,6 +372,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6742545925059983509, guid: 02646483850baa14289a04f1933d9204, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 503276251}
     - target: {fileID: 6742545925059983510, guid: 02646483850baa14289a04f1933d9204, type: 3}
       propertyPath: m_Name
       value: Heal Cube
@@ -1746,6 +1750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ca1ca6df6139a4bad39f516cab71be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponState: {fileID: 0}
   fist: {fileID: 21300000, guid: 1daf8534663559f49ac82af182d67d98, type: 3}
   pistol: {fileID: 21300000, guid: 421250265f9b6b843b836206376837a7, type: 3}
   machinegun: {fileID: 21300000, guid: 490bb728c46615844b24715e8088298a, type: 3}
