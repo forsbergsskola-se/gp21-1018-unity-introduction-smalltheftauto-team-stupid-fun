@@ -17,9 +17,9 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         /*
-         * If something doens't need to be changed by designer, it is better to assign it through code.
+         * If something doesn't need to be changed in the editor, it is better to assign it through code.
          * So we don't have a risk to loose the reference.
-         * There is a tag ovre the class delaration that forces the game object to have a RigidBody2D
+         * There is a tag over the class declaration that forces this game object to have a RigidBody2D
          */
         rb = GetComponent<Rigidbody2D>();
     }
