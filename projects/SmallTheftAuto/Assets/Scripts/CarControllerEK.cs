@@ -37,6 +37,7 @@ public class CarControllerEK : MonoBehaviour {
         KillOrthogonalVelocity();
     }
 
+    // TODO: This is a good script. I hope that its functionality is also understood ;)
     private void ApplyEngineForce() {
 
         //create engine force

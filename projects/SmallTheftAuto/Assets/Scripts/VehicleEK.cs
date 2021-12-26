@@ -16,6 +16,7 @@ public class VehicleEK : MonoBehaviour {
         }
     }
 
+    // TODO: Nice! :)
     public void EnterCar(DriverEK driver) {
         this.driver = driver;
         car.GetComponent<DriverEK>();

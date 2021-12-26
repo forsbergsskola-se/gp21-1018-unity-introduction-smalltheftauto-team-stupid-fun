@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Nicely prepared. Too bad that it did not come to use.
 public class ScoreSystem : MonoBehaviour
 {
     public int currentScore;
