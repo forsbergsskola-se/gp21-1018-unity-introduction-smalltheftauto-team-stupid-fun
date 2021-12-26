@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Most simple traffic ai ever implemented :D
 public class AiCarMovement : MonoBehaviour
 {
     public float x;

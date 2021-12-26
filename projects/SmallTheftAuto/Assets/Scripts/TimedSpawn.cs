@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Good! :)
 public class TimedSpawn : MonoBehaviour
 {
     public GameObject spawnee;

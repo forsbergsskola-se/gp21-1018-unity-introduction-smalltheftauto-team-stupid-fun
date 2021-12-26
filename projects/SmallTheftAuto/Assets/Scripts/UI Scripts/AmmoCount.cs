@@ -9,6 +9,9 @@ public class AmmoCount : MonoBehaviour
     public Shooting pistol;
     public Shooting machineGun;
     
+    // TODO: Quite good, but it would've been better, if there was something like:
+    // public Shooting[] weapons;
+    // and maybe: public Shooting[] activeWeapon;
     void Update()
     {
         if (machineGun.isActiveAndEnabled)
