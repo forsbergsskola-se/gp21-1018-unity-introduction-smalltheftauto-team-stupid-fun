@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class CarMovement : MonoBehaviour {
 
+    /*
+     * Instead of public variables, I rather keep it private but serializable.
+     * E.g: [SerializeField] private float driftFactor.
+     *
+     * the tag [SerializeField] allows the variable to be showed in the inspector
+     * but the private state doesn't let other classes to access it.
+     */
+    
     [Header("Car Settings")]
-    public float driftFactor = 0.95f;
-    public float accelerationFactor = 30;
-    public float breakForce = 100f;
-    public float turnFactor = 3.5f;
-    public float maxSpeed = 20;
+    [SerializeField] private float driftFactor = 0.95f;
+    [SerializeField] private float accelerationFactor = 30;
+    [SerializeField] private float breakForce = 100f;
+    [SerializeField] private float turnFactor = 3.5f;
+    [SerializeField] private float maxSpeed = 20;
 
     private float accelerationInput = 0;
     private float steeringInput = 0;
